@@ -5,6 +5,19 @@ project(libmooltipass)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 find_package(libusb REQUIRED)
 
+add_custom_target(generate_commands
+${CMAKE_CURRENT_SOURCE_DIR}/src/tools/generator/commands_generator.sh
+COMMENT
+    "Regenerate command list"
+SOURCES
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/tools/generator/commands_generator.sh
+	${CMAKE_CURRENT_SOURCE_DIR}/src/tools/generator/requirements.txt
+	${CMAKE_CURRENT_SOURCE_DIR}/src/tools/generator/command_definition.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/tools/generator/command_info.c
+	${CMAKE_CURRENT_SOURCE_DIR}/include/libuma/command/raw.inc
+
+)
+
 include(style)
 include(cppcheck)
 
@@ -16,6 +29,14 @@ add_library(uma SHARED
 	include/libuma/usb/message.h
 
 	src/usb/message.c
+
+	# Commands
+	include/libuma/command/type.h
+	include/libuma/command/original.h
+	include/libuma/command/utils.h
+
+	src/command/utils.c
+	src/command/original.c
 
 	# base system
 	src/retcode.c
