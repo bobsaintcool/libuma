@@ -32,3 +32,12 @@ add_library(uma SHARED
 target_link_libraries(uma ${LIBUSB_LIBRARIES})
 validate_style(uma)
 validate_cppcheck(uma)
+
+
+add_executable(mooltipass_list
+	tools/list/main.c
+)
+
+target_link_libraries(mooltipass_list uma)
+validate_style(mooltipass_list)
+validate_cppcheck(mooltipass_list)
