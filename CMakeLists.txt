@@ -5,5 +5,7 @@ project(libmooltipass)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 find_package(libusb REQUIRED)
 
+include(style)
+
 include_directories(include ${LIBUSB_INCLUDE_DIR})
 
