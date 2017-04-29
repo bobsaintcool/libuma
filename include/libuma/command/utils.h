@@ -1,9 +1,12 @@
 #include <libuma/command/type.h>
+#include <stdint.h>
 
 #ifndef UMA_COMMAND_UTILS_H
 #define UMA_COMMAND_UTILS_H
 
-char* moopass_command_name_get_from_id(uma_command_info* commands, size_t command_count, uint8_t raw_command_id);
-int moopass_command_id_get_from_name();
+int moopass_command_name_get(char const ** name, uint8_t command_id);
+int moopass_command_id_get_from_name(char const * const name, uint8_t *command_id);
+int moopass_command_get_from_id(uint8_t command_id, uma_command_info **command_info);
+int moopass_command_get_from_name(char const * const name, uma_command_info **command_info);
 
 #endif //UMA_COMMAND_UTILS_H
