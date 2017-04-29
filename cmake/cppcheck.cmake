@@ -55,8 +55,6 @@ function(validate_cppcheck TARGET_NAME)
 			--std=c++11
 			${LIBRARY_OPTION}
 			--template='[{severity}][{id}] {message} {callstack} \(On {file}:{line}\)'
-			--verbose
-			--quiet
 			${CHECKCONFIG_OPTION}
 			${SOURCE_FILES}
 	)
