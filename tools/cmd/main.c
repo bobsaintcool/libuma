@@ -2,7 +2,7 @@
 #include <libuma/init.h>
 #include <libuma/usb/sync.h>
 #include <libuma/device/handler.h>
-#include <libuma/commands/utils.h>
+#include <libuma/command/utils.h>
 #include <argp.h>
 #include <stdbool.h>
 #include <string.h>
