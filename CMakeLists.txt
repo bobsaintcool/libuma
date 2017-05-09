@@ -30,6 +30,10 @@ add_library(uma SHARED
 
 	src/usb/message.c
 
+	# Actions
+	include/libuma/action/device.h
+	include/libuma/action/credential.h
+
 	# Commands
 	include/libuma/command/type.h
 	include/libuma/command/original.h
